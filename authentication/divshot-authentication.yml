@@ -1,0 +1,60 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/divshot/divshot-api/blob/master/README.md
+docs: https://github.com/divshot/divshot-api#instantiate
+status: abandoned
+notes: >-
+  Derived from the first-party divshot-api client README, the only surviving
+  public description of the Divshot API's authentication model. No OpenAPI was
+  ever published and api.divshot.com no longer resolves, so this is a historical
+  profile, not a usable auth contract. derive-authentication.py found no spec
+  files in this repo (0 auth profiles).
+summary:
+  types:
+  - http
+  - oauth2-like
+  api_key_in: []
+  oauth2_flows:
+  - password
+  - github-browser-popup
+schemes:
+- name: accessToken
+  type: http
+  scheme: bearer
+  description: >-
+    Long-lived Divshot access token passed to the client (`token` option) or to
+    the CLI via `-t, --token`. Obtainable from the CLI with `auth:token`.
+  sources:
+  - https://github.com/divshot/divshot-api/blob/master/README.md
+  - https://github.com/divshot/divshot-cli/blob/master/README.md
+- name: passwordGrant
+  type: oauth2
+  flow: password
+  description: >-
+    Email + password exchanged for an access token via `divshot.auth('password',
+    {email, password})`. The docs state passwords MUST NOT be stored and should
+    only come from direct user input.
+  requires_client_id: true
+  sources:
+  - https://github.com/divshot/divshot-api/blob/master/README.md
+- name: githubBrowserAuth
+  type: oauth2
+  flow: browser-popup
+  description: >-
+    Popup-based browser authentication, `divshot.auth('github')`, returning a
+    user object and an access_token without the integrator handling credentials.
+  requires_client_id: true
+  sources:
+  - https://github.com/divshot/divshot-api/blob/master/README.md
+client_registration:
+  client_id_required: true
+  note: A client_id MUST be specified when instantiating the client.
+token_storage:
+  cookie: true
+  description: >-
+    `auth({store: true})` writes an encoded access token to a cookie on the
+    current domain for one week; `authWithCookie()` re-authenticates from it.
+end_user_protection:
+  basic_auth_on_environments: >-
+    Deployed environments could be protected with HTTP basic auth via the CLI
+    (`protect` / `unprotect`) or `app.env(<env>).config({auth: 'user:pass'})`.
