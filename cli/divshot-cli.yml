@@ -1,0 +1,155 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/divshot/divshot-cli/blob/master/README.md
+status: abandoned
+name: divshot-cli
+description: >-
+  First-party command-line interface for the Divshot front-end/static
+  application hosting platform. The command surface below is captured verbatim
+  from the archived first-party README at github.com/divshot/divshot-cli. The
+  Divshot API host no longer resolves, so the CLI is a historical record - it
+  cannot authenticate or deploy against a live service.
+package: packages/divshot-packages.yml#divshot-cli
+version: 1.11.0
+last_published: '2015-10-13'
+install:
+- method: npm
+  command: npm install divshot-cli -g
+global_options:
+- flag: -h, --help
+  description: show the help menu
+- flag: -v, --version
+  description: show current version of Divshot CLI
+- flag: -t, --token [token]
+  description: manually pass access token
+- flag: -a, --app [app name]
+  description: manually supply an app name
+- flag: -c, --config [config]
+  description: use a different config file
+- flag: -o, --org [org name]
+  description: set command to operate on the given organization
+- flag: --timeout [timeout]
+  description: set the command timeout in milliseconds
+environments:
+- name: development
+  note: default environment during app deployment
+- name: staging
+- name: production
+environment_url_scheme: http://[environment].[app name].divshot.io
+command_groups:
+- group: auth
+  commands:
+  - name: login
+    description: login to Divshot
+  - name: logout
+    description: logout from Divshot
+  - name: auth:token
+    description: print out your access token
+- group: account
+  commands:
+  - name: account
+    description: display basic account details
+  - name: account:redeem
+    description: redeem a voucher and credit it to your account
+- group: apps
+  commands:
+  - name: apps
+    description: list your apps
+  - name: create
+    description: create a new app
+  - name: destroy
+    description: delete an app
+  - name: rename
+    description: change the name of an app
+  - name: init
+    description: step by step guide to initiate an app in the current directory
+  - name: open
+    description: open the current app in your default browser
+- group: deploy
+  commands:
+  - name: push
+    description: deploy your app to the specified environment
+  - name: promote
+    description: promote one environment to another
+  - name: rollback
+    description: rollback an environment to a previous release
+  - name: pull
+    description: download the current files for a given environment into a directory
+  - name: files
+    description: list the current files associated with the given environment
+  - name: purge
+    description: purge the cache for your app
+  - name: status
+    description: show release info for each environment
+- group: domains
+  commands:
+  - name: domains
+    description: list your domains
+  - name: domains:add
+    description: add a custom domain to your app
+  - name: domains:remove
+    description: remove a custom domain from your app
+  - name: cert
+    description: upload an SSL certificate
+- group: config
+  commands:
+  - name: config
+    description: list, set, or remove keys and values from your app
+  - name: config:add
+    description: add a value to the config file
+  - name: config:remove
+    description: remove a value from the config file
+  - name: env
+    description: list environment variables for your app
+  - name: env:add
+    description: add environment variables to your app
+  - name: env:remove
+    description: remove environment variables from your app
+  - name: env:pull
+    description: copy environment data to your local environment
+- group: webhooks
+  commands:
+  - name: hooks
+    description: list webhooks
+  - name: hooks:add
+    description: add a webhook
+  - name: hooks:remove
+    description: remove a webhook
+  - name: hooks:pause
+    description: pause a webhook
+  - name: hooks:resume
+    description: resume a webhook
+- group: emails
+  commands:
+  - name: emails
+    description: list emails associated with your app
+  - name: emails:add
+    description: add an email to your app
+  - name: emails:remove
+    description: remove an email from your app
+  - name: emails:resend
+    description: resend the confirmation email
+- group: access-control
+  commands:
+  - name: protect
+    description: add http basic auth to any environment
+  - name: unprotect
+    description: remove basic auth from an environment on your app
+- group: performance
+  commands:
+  - name: performance
+    description: show if current app has performance status
+  - name: performance:on
+    description: give the current app performance status
+  - name: performance:off
+    description: remove performance status from the current app
+  - name: stats
+    description: show stats info for your app
+- group: local
+  commands:
+  - name: server
+    description: start server for local dev
+  - name: help
+    description: get help with common commands
+  - name: changelog
+    description: view the cli changelog

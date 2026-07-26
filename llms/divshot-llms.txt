@@ -1,0 +1,52 @@
+# Divshot
+
+> Divshot was a front-end / static web application hosting platform (Santa Monica, CA) offering
+> git-style deploys of single-page and static apps across development, staging and production
+> environments, custom domains, SSL, environment config, basic-auth protection and webhooks.
+> It was backed by 500 Global, acquired by Google in 2015 and folded into Firebase Hosting.
+> THE SERVICE IS DEFUNCT: divshot.com no longer resolves and the API host api.divshot.com is
+> gone. Everything below is a historical record captured from surviving first-party sources
+> (the npm registry and the github.com/divshot organization). None of it is callable.
+
+## Status
+
+- Status: defunct / end-of-life (probed 2026-07-20)
+- Successor (reported): Google Firebase Hosting
+- Website: https://divshot.com (does not resolve)
+- Note: divshot.io now hosts an unrelated third-party WordPress placeholder
+
+## Source code
+
+- GitHub organization: https://github.com/divshot
+- CLI repository: https://github.com/divshot/divshot-cli
+- API client repository: https://github.com/divshot/divshot-api
+- Superstatic (open-source static web server that came out of Divshot): https://github.com/divshot/superstatic
+
+## Packages
+
+- divshot-cli (npm, 1.11.0, last published 2015-10-13): https://www.npmjs.com/package/divshot-cli
+- divshot-api (npm, 1.3.0, last published 2015-02-23): https://www.npmjs.com/package/divshot-api
+- divshot (npm, 0.4.8): https://www.npmjs.com/package/divshot
+- divshot-push (npm, 1.4.2): https://www.npmjs.com/package/divshot-push
+- divshot-upload (npm, 0.3.1): https://www.npmjs.com/package/divshot-upload
+- grunt-divshot (npm, 1.0.0): https://www.npmjs.com/package/grunt-divshot
+
+## Artifacts in this repo
+
+- Packages: packages/divshot-packages.yml
+- CLI command surface: cli/divshot-cli.yml
+- Authentication profile: authentication/divshot-authentication.yml
+- Data model: data-model/divshot-data-model.yml
+- Webhook surface: asyncapi/divshot-webhooks.yml
+- Lifecycle / end-of-life record: lifecycle/divshot-lifecycle.yml
+- Domain security probe: security/divshot-domain-security.yml
+- Well-known probe (empty): well-known/divshot-well-known.yml
+
+## API surface (historical)
+
+The Divshot API was never published as OpenAPI. Its resource families, as documented by the
+first-party divshot-api client: user (password, emails), organizations (members), apps, builds,
+releases, domains, environment configuration, subscription, webhooks.
+
+Authentication was a client_id plus either a password grant, a GitHub browser-popup flow, or a
+bearer access token.

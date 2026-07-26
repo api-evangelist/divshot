@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/divshot/divshot-api/blob/master/README.md
+type: Webhooks
+status: abandoned
+asyncapi_published: false
+notes: >-
+  Divshot documented a per-app webhook management surface in its first-party API
+  client and CLI. No AsyncAPI document, no event-name catalog, and no payload
+  schemas were ever published, and the service is defunct - so only the
+  management surface is recorded here. Nothing about the event payloads is
+  inferred.
+management:
+  scope: per-app
+  fields_documented:
+  - name: url
+    description: Destination URL the webhook posts to
+  - name: active
+    description: Whether the webhook is enabled
+  operations:
+  - name: list
+    source: app.webhooks.list()
+  - name: create
+    source: 'app.webhooks.create({url, active})'
+  - name: pause
+    source: app.webhooks.pause(hook)
+  - name: resume
+    source: app.webhooks.resume(hook)
+  - name: remove
+    source: app.webhooks.remove(hookId)
+  cli:
+  - hooks
+  - hooks:add
+  - hooks:remove
+  - hooks:pause
+  - hooks:resume
+events:
+  catalog_published: false
+  known_events: []

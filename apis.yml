@@ -1,7 +1,31 @@
 aid: divshot
 name: Divshot
-description: Divshot is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Divshot was a front-end and static web application hosting platform based in Santa
+  Monica, California, and a 500 Global portfolio company. It offered command-line
+  deploys of single-page and static applications across development, staging and
+  production environments, with instant environment URLs, custom domains and SSL
+  certificate upload, environment variables and app configuration, HTTP basic-auth
+  protection of environments, cache purging, release promotion and rollback, and
+  per-app webhooks. Divshot published a first-party CLI (divshot-cli) and a JavaScript
+  API client (divshot-api) on npm, and open-sourced Superstatic, the static web server
+  behind the platform. Divshot was acquired by Google in 2015 and folded into Firebase
+  Hosting. The service is defunct - divshot.com no longer resolves and no live API,
+  documentation or developer portal remains. This profile is a historical record built
+  from the surviving first-party npm packages and GitHub repositories.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/1644719?v=4
 url: https://raw.githubusercontent.com/api-evangelist/divshot/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +33,59 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct
+x-status-evidence: 'divshot.com no longer resolves (no A record, no MX, no SPF/TXT;
+  domain parked on share-dns.com nameservers) and both http:// and https:// fail to
+  connect, as re-probed 2026-07-20. api.divshot.com, docs.divshot.com and
+  www.divshot.com likewise do not resolve. Every first-party npm package was last
+  published in 2014-2015. The github.com/divshot organization still resolves (HTTP
+  200) and is the only surviving public surface. Divshot was a front-end/static web
+  application hosting platform acquired by Google in 2015 and folded into Firebase
+  Hosting. divshot.io is now an unrelated third-party WordPress placeholder on
+  Hostinger and is not operated by Divshot.'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Web Hosting
+- Static Hosting
+- Front-End
+- Deployment
+- Developer Tools
+- Defunct
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1
 common:
 - type: Website
   url: https://divshot.com
+- type: GitHubOrganization
+  url: https://github.com/divshot
+- type: Packages
+  url: packages/divshot-packages.yml
+- type: SDKs
+  url: packages/divshot-packages.yml
+- type: CLI
+  url: cli/divshot-cli.yml
+- type: Authentication
+  url: authentication/divshot-authentication.yml
+- type: DataModel
+  url: data-model/divshot-data-model.yml
+- type: Webhooks
+  url: asyncapi/divshot-webhooks.yml
+- type: Lifecycle
+  url: lifecycle/divshot-lifecycle.yml
+- type: DomainSecurity
+  url: security/divshot-domain-security.yml
+- type: LLMsTxt
+  url: llms/divshot-llms.txt

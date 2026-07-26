@@ -1,0 +1,57 @@
+generated: '2026-07-20'
+method: probed
+source: dig + curl probes run 2026-07-20
+notes: >-
+  0-working/probe-domain-security.py reported `divshot unreachable` - the primary
+  domain does not resolve. The values below were probed directly. Absence of
+  records is real recorded data, not a gap in the probe. divshot.io, the old
+  app-hosting domain, now resolves to a third-party WordPress placeholder on
+  Hostinger and is NOT operated by Divshot - it is listed only so a later run
+  does not mistake it for a live Divshot surface.
+hosts:
+- host: divshot.com
+  resolves: false
+  https: false
+  http_status: null
+  error: could not connect (curl exit 6, could not resolve host)
+- host: www.divshot.com
+  resolves: false
+- host: api.divshot.com
+  resolves: false
+- host: docs.divshot.com
+  resolves: false
+- host: divshot.io
+  resolves: true
+  ip: 145.14.152.116
+  https: true
+  http_status: 200
+  operated_by_provider: false
+  detail: third-party WordPress 6.9.5 placeholder on Hostinger parking nameservers
+domains:
+- domain: divshot.com
+  a_records: []
+  aaaa_records: []
+  mx: []
+  nameservers:
+  - a.share-dns.com.
+  - b.share-dns.net.
+  parked: true
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null
+  soa: null
+- domain: divshot.io
+  operated_by_provider: false
+  a_records:
+  - 145.14.152.116
+  nameservers:
+  - orbit.dns-parking.com.
+  - horizon.dns-parking.com.
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 include:_spf.mail.hostinger.com ~all
+  dmarc: true
+  dmarc_policy: none

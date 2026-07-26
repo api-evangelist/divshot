@@ -1,0 +1,146 @@
+generated: '2026-07-20'
+method: searched
+source: https://registry.npmjs.org/
+status: abandoned
+notes: >-
+  Divshot's platform is defunct (divshot.com no longer resolves; the service was
+  folded into Google Firebase Hosting after the 2015 acquisition). The packages
+  below still exist and are downloadable on the npm registry, and were verified
+  first-party by their GitHub repository (github.com/divshot/*) and npm
+  maintainers (scottcorgan, mbleigh - Divshot's founders). None have been
+  published since 2015 and none function against a live API host.
+registries_probed:
+- registry: npm
+  status: 200
+  first_party_hits: 7
+- registry: pypi
+  status: none
+- registry: rubygems
+  status: none
+- registry: packagist
+  status: none
+- registry: crates.io
+  status: none
+- registry: nuget
+  status: none
+- registry: maven-central
+  status: none
+- registry: pkg.go.dev
+  status: none
+packages:
+- language: javascript
+  registry: npm
+  name: divshot-cli
+  url: https://www.npmjs.com/package/divshot-cli
+  install: npm install -g divshot-cli
+  version: 1.11.0
+  last_published: '2015-10-13'
+  repository: https://github.com/divshot/divshot-cli
+  description: CLI for Divshot
+  kind: cli
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot-api
+  url: https://www.npmjs.com/package/divshot-api
+  install: npm install divshot-api --save
+  version: 1.3.0
+  last_published: '2015-02-23'
+  repository: https://github.com/divshot/divshot-api
+  description: Wrapper for the Divshot API
+  kind: sdk
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot
+  url: https://www.npmjs.com/package/divshot
+  install: npm install divshot --save
+  version: 0.4.8
+  last_published: '2014-02-18'
+  repository: https://github.com/divshot/divshot-api
+  description: Divshot client (browser/standalone build of the API wrapper)
+  kind: sdk
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot-push
+  url: https://www.npmjs.com/package/divshot-push
+  install: npm install divshot-push --save
+  version: 1.4.2
+  last_published: '2015-04-14'
+  repository: https://github.com/divshot/divshot-push
+  description: Deploy/push helper used by the Divshot CLI
+  kind: library
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot-upload
+  url: https://www.npmjs.com/package/divshot-upload
+  install: npm install divshot-upload --save
+  version: 0.3.1
+  last_published: '2014-06-17'
+  repository: https://github.com/divshot/divshot-upload
+  description: Upload helper for Divshot app bundles
+  kind: library
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot-logger
+  url: https://www.npmjs.com/package/divshot-logger
+  install: npm install divshot-logger --save
+  version: 1.0.0
+  last_published: '2015-03-17'
+  repository: https://github.com/divshot/logger
+  description: Logging utility used across Divshot services
+  kind: library
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: divshot-services
+  url: https://www.npmjs.com/package/divshot-services
+  install: npm install divshot-services --save
+  version: 0.1.0
+  last_published: '2014-05-17'
+  repository: https://github.com/divshot/divshot-services
+  description: Divshot services client
+  kind: library
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: grunt-divshot
+  url: https://www.npmjs.com/package/grunt-divshot
+  install: npm install grunt-divshot --save-dev
+  version: 1.0.0
+  last_published: '2014-11-24'
+  repository: https://github.com/divshot/grunt-divshot
+  description: Grunt task for deploying to Divshot
+  kind: build-plugin
+  official: true
+  maintained: false
+- language: javascript
+  registry: npm
+  name: ember-cli-divshot
+  url: https://www.npmjs.com/package/ember-cli-divshot
+  version: 0.1.7
+  last_published: '2015-01-23'
+  repository: https://github.com/rwjblue/ember-cli-divshot
+  description: Ember CLI addon for deploying to Divshot
+  kind: build-plugin
+  official: false
+- language: javascript
+  registry: npm
+  name: hubot-divshot
+  url: https://www.npmjs.com/package/hubot-divshot
+  version: 1.1.0
+  last_published: '2014-12-19'
+  repository: https://github.com/matteodepalo/hubot-divshot
+  description: Hubot script for Divshot deploys
+  kind: integration
+  official: false

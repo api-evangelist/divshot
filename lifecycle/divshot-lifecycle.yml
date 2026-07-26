@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: probed
+source: dns/http probes + npm registry + github.com/divshot
+status: end-of-life
+notes: >-
+  Divshot was a front-end / static web application hosting platform. It was
+  acquired by Google in 2015 and folded into Firebase Hosting; the product and
+  its API were retired. This file records the lifecycle facts the pipeline could
+  verify directly.
+versioning:
+  scheme: unknown
+  current: null
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+end_of_life:
+  service_available: false
+  probed: '2026-07-20'
+  evidence:
+  - kind: dns
+    detail: divshot.com has no A record; NS delegated to a.share-dns.com / b.share-dns.net (parked)
+  - kind: dns
+    detail: no MX, no TXT/SPF, and no A records for www., api., or docs.divshot.com
+  - kind: http
+    detail: https://divshot.com/ and http://divshot.com/ both fail to connect (curl exit 6, no HTTP status)
+  - kind: registry
+    detail: every first-party npm package last published in 2014-2015 (divshot-cli 1.11.0, 2015-10-13)
+  - kind: repo
+    detail: github.com/divshot org still resolves (HTTP 200); divshot-cli, divshot-api and superstatic repos remain readable
+  successor:
+    reported: Google Firebase Hosting
+    basis: >-
+      Reported acquisition of Divshot by Google in 2015 (recorded in this repo's
+      prior x-status-evidence). Corroborating signal only - Divshot npm packages
+      are co-maintained by mbleigh, a Firebase engineer. Not independently
+      re-verified in this pass (web search unavailable).
+deprecated_operations: []

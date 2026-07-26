@@ -1,0 +1,91 @@
+generated: '2026-07-20'
+method: derived
+source: https://github.com/divshot/divshot-api/blob/master/README.md
+status: abandoned
+notes: >-
+  Entity graph derived from the resource nesting documented in the first-party
+  divshot-api client README (no OpenAPI was ever published). Relationships come
+  from the client's chained resource paths (e.g. `app.builds.id(x).release(env)`),
+  not from a machine-readable schema, so field-level detail is unavailable.
+entities:
+- name: User
+  operations: [self, get, update, delete, setWelcomed]
+  sub_resources: [password, emails]
+- name: Email
+  belongs_to: User
+  operations: [add, primary, remove, resend]
+- name: Organization
+  operations: [list, get, create, update]
+  fields_documented: [name, nick, billing_email, gravatar_email]
+- name: Member
+  belongs_to: Organization
+  operations: [list, create, update, remove]
+  fields_documented: [name, email, admin]
+- name: App
+  operations: [list, get, create, createFromObject, remove]
+- name: Build
+  belongs_to: App
+  operations: [list, get, finalize, release]
+- name: Release
+  belongs_to: App
+  keyed_by: environment
+  operations: [list, get, rollback, rollbackTo, promote]
+- name: Domain
+  belongs_to: App
+  operations: [list, add, remove]
+- name: Environment
+  belongs_to: App
+  enum: [development, staging, production]
+  operations: [config]
+- name: Subscription
+  belongs_to: App
+  operations: [update]
+- name: Webhook
+  belongs_to: App
+  operations: [list, create, pause, resume, remove]
+  fields_documented: [url, active]
+relationships:
+- from: User
+  to: Email
+  kind: has_many
+  via: user.emails
+- from: User
+  to: Organization
+  kind: has_many
+  via: organizations.list
+- from: Organization
+  to: Member
+  kind: has_many
+  via: organizations.id().members
+- from: Organization
+  to: App
+  kind: has_many
+  via: organizations.id().apps
+- from: App
+  to: Build
+  kind: has_many
+  via: app.builds
+- from: App
+  to: Release
+  kind: has_many
+  via: app.releases
+- from: Build
+  to: Release
+  kind: has_one
+  via: build.release(environment)
+- from: App
+  to: Domain
+  kind: has_many
+  via: app.domains
+- from: App
+  to: Environment
+  kind: has_many
+  via: app.env()
+- from: App
+  to: Subscription
+  kind: has_one
+  via: app.subscription
+- from: App
+  to: Webhook
+  kind: has_many
+  via: app.webhooks

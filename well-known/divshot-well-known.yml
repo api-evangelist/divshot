@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: probed
+host: https://divshot.com
+notes: >-
+  No /.well-known/ surface exists: divshot.com does not resolve, so every request
+  failed at DNS resolution (curl exit 6, no HTTP status returned). Recorded as an
+  honest empty result. No raw documents were saved and no WellKnown/SecurityTxt
+  pointer is wired into apis.yml.
+documents:
+- path: /.well-known/security.txt
+  status: null
+  error: dns-resolution-failed
+- path: /.well-known/openid-configuration
+  status: null
+  error: dns-resolution-failed
+- path: /.well-known/oauth-authorization-server
+  status: null
+  error: dns-resolution-failed
+- path: /.well-known/api-catalog
+  status: null
+  error: dns-resolution-failed
+- path: /.well-known/ai-plugin.json
+  status: null
+  error: dns-resolution-failed
