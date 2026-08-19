@@ -43,7 +43,7 @@ x-status-evidence: 'divshot.com no longer resolves (no A record, no MX, no SPF/T
   application hosting platform acquired by Google in 2015 and folded into Firebase
   Hosting. divshot.io is now an unrelated third-party WordPress placeholder on
   Hostinger and is not operated by Divshot.'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
 tags:
