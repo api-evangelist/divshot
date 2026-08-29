@@ -13,6 +13,17 @@ description: >-
   Hosting. The service is defunct - divshot.com no longer resolves and no live API,
   documentation or developer portal remains. This profile is a historical record built
   from the surviving first-party npm packages and GitHub repositories.
+deliveryModel:
+  model: library
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
