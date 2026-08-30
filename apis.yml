@@ -61,7 +61,7 @@ tags:
 - Company
 - Web Hosting
 - Static Hosting
-- Frontend
+- Front-End
 - Deployment
 - Developer Tools
 - Defunct
@@ -87,6 +87,11 @@ x-enrichment:
   artifacts_added: 9
   pass: local-v1
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/google/
+  name: Google
+  x-relationship: acquired
+  x-evidence: "Divshot was acquired by Google in 2015 and folded into Firebase Hosting."
 - type: Website
   url: https://divshot.com
 - type: GitHubOrganization
