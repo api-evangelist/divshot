@@ -1,24 +1,19 @@
 generated: '2026-07-20'
 method: probed
 host: https://divshot.com
-notes: >-
-  No /.well-known/ surface exists: divshot.com does not resolve, so every request
-  failed at DNS resolution (curl exit 6, no HTTP status returned). Recorded as an
-  honest empty result. No raw documents were saved and no WellKnown/SecurityTxt
-  pointer is wired into apis.yml.
-documents:
-- path: /.well-known/security.txt
-  status: null
-  error: dns-resolution-failed
-- path: /.well-known/openid-configuration
-  status: null
-  error: dns-resolution-failed
-- path: /.well-known/oauth-authorization-server
-  status: null
-  error: dns-resolution-failed
-- path: /.well-known/api-catalog
-  status: null
-  error: dns-resolution-failed
-- path: /.well-known/ai-plugin.json
-  status: null
-  error: dns-resolution-failed
+notes: 'No /.well-known/ surface exists: divshot.com does not resolve, so every request failed at DNS
+  resolution (curl exit 6, no HTTP status returned). Recorded as an honest empty result. No raw documents
+  were saved and no WellKnown/SecurityTxt pointer is wired into apis.yml.'
+hosts:
+- host: https://divshot.com
+  documents:
+  - path: /.well-known/security.txt
+  - path: /.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+  - path: /.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
